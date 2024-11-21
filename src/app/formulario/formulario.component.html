@@ -1,0 +1,140 @@
+<div class="container">
+  <form [formGroup]="miFormulario" (ngSubmit)="enviar()">
+    <div class="box-1">
+      <!-- MARCA-->
+      <div class="mb-3">
+        <label for="" class="form-label">Marca</label>
+        <input
+          type="text"
+          class="form-control"
+          id="marca"
+          formControlName="marca"
+        />
+      </div>
+      <!-- MODELO-->
+      <div class="mb-3">
+        <label for="modelo" class="form-label">modelo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="modelo"
+          formControlName="modelo"
+        />
+      </div>
+      <!-- COLOR -->
+      <div class="mb-3">
+        <label for="color" class="form-label">color</label>
+        <input
+          type="text"
+          class="form-control"
+          id="color"
+          formControlName="color"
+        />
+      </div>
+      <!-- Condicion -->
+      <div class="mb-3"></div>
+      <label for="Condicion" class="form-label">Condicion</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Condicion"
+        formControlName="Condicion"
+      />
+
+      <!-- anio -->
+      <div class="mb-3">
+        <label for="anio" class="form-label">aÃ±o</label>
+        <input
+          type="number"
+          class="form-control"
+          id="anio"
+          formControlName="anio"
+        />
+      </div>
+      <!-- KM -->
+      <div class="mb-3">
+        <label for="km" class="form-label">km</label>
+        <input
+          type="number"
+          class="form-control"
+          id="km"
+          formControlName="km"
+        />
+      </div>
+    </div>
+
+    <div class="box-2">
+      <!-- tipo (usado o nuevo)-->
+      <div>
+        <label for="tipo" class="form-label">Tipo</label>
+        <div class="form-floating">
+          <select class="form-select" id="tipo" formControlName="tipo">
+            <option value="1">Usado</option>
+            <option value="2">Nuevo</option>
+          </select>
+          <label for="floatingSelect">Elija una de las opciones</label>
+        </div>
+      </div>
+
+      <!--ESTADO -->
+      <div class="mb-3">
+        <label for="estado" class="form-label">estado</label>
+        <input
+          type="text"
+          class="form-control"
+          id="estado"
+          formControlName="estado"
+        />
+      </div>
+
+      <!-- tipo de motor (Diesel o Nafta)-->
+      <div>
+        <label for="tipo_motor" class="form-label">Tipo de Motor</label>
+        <div class="form-floating">
+          <select
+            class="form-select"
+            id="tipo_motor"
+            aformControlName="tipo_motor"
+          >
+            <option value="1">Diesel</option>
+            <option value="2">Nafta</option>
+          </select>
+          <label for="floatingSelect">Elija una de las opciones</label>
+        </div>
+      </div>
+
+      <!--MOTOR -->
+      <div class="mb-3">
+        <label for="motor" class="form-label">motor</label>
+        <input
+          type="text"
+          class="form-control"
+          id="motor"
+          formControlName="motor"
+        />
+      </div>
+
+      <!--PRECIO -->
+      <div class="mb-3">
+        <label for="precio" class="form-label">precio</label>
+        <input
+          type="number"
+          class="form-control"
+          id="precio"
+          formControlName="precio"
+        />
+        <!-- IMAGEN 1-->
+      </div>
+      <div class="mb-3"></div>
+      <div class="mb-3"></div>
+      <div class="mb-3"></div>
+      <div class="mb-3"></div>
+      <div class="mb-3"></div>
+    </div>
+
+    <!-- Envio de datos-->
+    <div class="button">
+      <button type="submit" class="btn btn-primary">Enviar datos</button>
+    </div>
+  </form>
+</div>
