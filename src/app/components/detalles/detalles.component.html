@@ -5,49 +5,95 @@
     }@else{
     <div class="general">
       <div class="general2">
-        <div>
-          <h3>Marca: {{ auto?.marca }}</h3>
-          <h3>Modelo: {{ auto?.modelo }}</h3>
-          <h3>Condición: {{ auto?.condicion }}</h3>
-          <h3>Año: {{ auto?.anio }}</h3>
-          <h3>Kilometros: {{ auto?.km }}</h3>
-          <h3>Tipo de vehículo: {{ auto?.tipo }}</h3>
-        </div>
-        <div>
-          <h3>Estado del vehículo: {{ auto?.estado }}</h3>
-          <h3>Tipo de motor: {{ auto?.tipomotor }}</h3>
-          <h3>Transmisión: {{ auto?.caja }}</h3>
-          <h3>Motor (cc): {{ auto?.motor }}</h3>
-          <h3>Precio: ${{ auto?.precio }}</h3>
-          <h3>Sede: {{ auto?.sede }}</h3>
-        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th colspan="2">Detalles del Vehículo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Marca:</td>
+              <td>{{ auto?.marca }}</td>
+            </tr>
+            <tr>
+              <td>Modelo:</td>
+              <td>{{ auto?.modelo }}</td>
+            </tr>
+            <tr>
+              <td>Condición:</td>
+              <td>{{ auto?.condicion }}</td>
+            </tr>
+            <tr>
+              <td>Año:</td>
+              <td>{{ auto?.anio }}</td>
+            </tr>
+            <tr>
+              <td>Kilómetros:</td>
+              <td>{{ auto?.km }}</td>
+            </tr>
+            <tr>
+              <td>Tipo de vehículo:</td>
+              <td>{{ auto?.tipo }}</td>
+            </tr>
+            <tr>
+              <td>Estado del vehículo:</td>
+              <td>{{ auto?.estado }}</td>
+            </tr>
+            <tr>
+              <td>Tipo de motor:</td>
+              <td>{{ auto?.tipomotor }}</td>
+            </tr>
+            <tr>
+              <td>Transmisión:</td>
+              <td>{{ auto?.caja }}</td>
+            </tr>
+            <tr>
+              <td>Motor (cc):</td>
+              <td>{{ auto?.motor }}</td>
+            </tr>
+            <tr>
+              <td>Precio:</td>
+              <td>${{ auto?.precio }}</td>
+            </tr>
+            <tr>
+              <td>Sede:</td>
+              <td>{{ auto?.sede }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="fotos">
-        <img
-          class="img"
-          src="{{ auto?.imagen1 }}"
-          alt="Imagén del vehiculo nº 1"
-        />
-        <img
-          class="img"
-          src="{{ auto?.imagen2 }}"
-          alt="Imagén del vehiculo nº 2"
-        />
-        <img
-          class="img"
-          src="{{ auto?.imagen3 }}"
-          alt="Imagén del vehiculo nº 3"
-        />
-        <img
-          class="img"
-          src="{{ auto?.imagen4 }}"
-          alt="Imagén del vehiculo nº 4"
-        />
-        <img
-          class="img"
-          src="{{ auto?.imagen5 }}"
-          alt="Imagén del vehiculo nº 5"
-        />
+        <div>
+          <h5>Fotos del vehículo:</h5>
+        </div>
+        <div class="panelimg">
+          <img
+            class="img"
+            src="{{ auto?.imagen1 }}"
+            alt="Imagén del vehículo nº 1"
+          />
+          <img
+            class="img"
+            src="{{ auto?.imagen2 }}"
+            alt="Imagén del vehículo nº 2"
+          />
+          <img
+            class="img"
+            src="{{ auto?.imagen3 }}"
+            alt="Imagén del vehículo nº 3"
+          />
+          <img
+            class="img"
+            src="{{ auto?.imagen4 }}"
+            alt="Imagén del vehículo nº 4"
+          />
+          <img
+            class="img"
+            src="{{ auto?.imagen5 }}"
+            alt="Imagén del vehículo nº 5"
+          />
+        </div>
       </div>
     </div>
     }

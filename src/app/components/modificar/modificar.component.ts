@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { IAuto } from '../../models/auto.models';
 import { ApiService } from '../../services/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-modificar',
@@ -18,10 +19,14 @@ import { ApiService } from '../../services/api.service';
 export class ModificarComponent {
   // creamos el FormGroup
   miFormulario: FormGroup;
-
+  id!: string;
   auto?: IAuto;
 
-  constructor(private formulario: FormBuilder, private apiService: ApiService) {
+  constructor(
+    private formulario: FormBuilder,
+    private apiService: ApiService,
+    private route: ActivatedRoute
+  ) {
     this.miFormulario = this.formulario.group({
       id: ['', Validators.required],
       marca: ['', Validators.required],
@@ -42,6 +47,38 @@ export class ModificarComponent {
       imagen3: ['', Validators.required],
       imagen4: ['', Validators.required],
       imagen5: ['', Validators.required],
+    });
+  }
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id')!;
+    this.apiService.getAutobyId(Number(this.id)).subscribe({
+      next: (data: IAuto) => {
+        this.auto = data;
+        this.miFormulario.setValue({
+          id: this.auto.id,
+          marca: this.auto.marca,
+          modelo: this.auto.modelo,
+          color: this.auto.color,
+          condicion: this.auto.condicion,
+          anio: this.auto.anio,
+          km: this.auto.km,
+          tipo: this.auto.tipo,
+          estado: this.auto.estado,
+          tipomotor: this.auto.tipomotor,
+          caja: this.auto.caja,
+          motor: this.auto.motor,
+          precio: this.auto.precio,
+          sede: this.auto.sede,
+          imagen1: this.auto.imagen1,
+          imagen2: this.auto.imagen2,
+          imagen3: this.auto.imagen3,
+          imagen4: this.auto.imagen4,
+          imagen5: this.auto.imagen5,
+        });
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
     });
   }
 
@@ -72,7 +109,7 @@ export class ModificarComponent {
 
       const vehiculo = this.convertirAuto(this.auto);
 
-      this.apiService.postAuto(vehiculo).subscribe({
+      this.apiService.putAuto(vehiculo).subscribe({
         next: (res) => {
           console.log('Vehiculo modificado correctamente', res);
         },
