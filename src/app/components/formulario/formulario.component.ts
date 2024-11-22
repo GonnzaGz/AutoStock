@@ -23,7 +23,7 @@ export class FormularioComponent {
 
   constructor(private formulario: FormBuilder, private apiService: ApiService) {
     this.miFormulario = this.formulario.group({
-      id: ['', Validators.required],
+      id: 0,
       marca: ['', Validators.required],
       modelo: ['', Validators.required],
       color: ['', Validators.required],
@@ -32,7 +32,7 @@ export class FormularioComponent {
       km: ['', Validators.required],
       tipo: ['', Validators.required],
       estado: ['', Validators.required],
-      tipo_motor: ['', Validators.required],
+      tipomotor: ['', Validators.required],
       caja: ['', Validators.required],
       motor: ['', Validators.required],
       precio: ['', Validators.required],
