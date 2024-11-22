@@ -5,8 +5,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ApiService } from '../services/api.service';
-import { IAuto } from '../models/auto.models';
+import { ApiService } from '../../services/api.service';
+import { IAuto } from '../../models/auto.models';
 
 @Component({
   selector: 'app-formulario',
