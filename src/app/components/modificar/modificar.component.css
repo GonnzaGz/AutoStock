@@ -12,22 +12,14 @@
   z-index: 1;
 }
 
-.IMAGEN img {
-  height: 650px;
-  width: 1263px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: center;
-}
-
 .container .formulario {
   position: absolute;
   top: 10%; /* Centra verticalmente */
   left: 50%; /* Centra horizontalmente */
-  transform: translate(-70%, -70%); /* Ajusta para centrar */
+  transform: translate(-50%, -50%); /* Ajusta para centrar */
   background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
   color: white;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   z-index: 2;
 }
@@ -36,7 +28,7 @@
   display: flex; /* Flexbox para las dos columnas */
   justify-content: space-between; /* Espacio entre las columnas */
   gap: 30px; /* Espacio entre box-1 y box-2 */
-  top: 550px;
+  top: 400px;
   width: 70%;
   left: 75%;
 }

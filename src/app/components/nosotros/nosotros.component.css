@@ -1,7 +1,18 @@
-p{
-    background-color: dimgrey;
-    height: 51.5rem;
-    width: 119.5rem;
-    background-image: url(../../../../public/assets/mustang.webp);
-    background-position: center center;
+div {
+  background-color: dimgrey;
+  height: 650px;
+  width: 1263px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: center;
+  background-image: url(../../../../public/assets/mustang.webp);
+  background-position: center center;
+  color: white;
+  h1 {
+    padding: 1rem;
+  }
+
+  h2 {
+    padding: 1rem;
+  }
 }

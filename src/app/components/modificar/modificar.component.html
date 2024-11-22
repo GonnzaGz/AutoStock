@@ -2,9 +2,18 @@
   <div class="IMAGEN">
     <img src="assets/1440p-cars-moreiyy4ka0ofq8w.jpg" alt="" />
   </div>
-  <form [formGroup]="miFormulario" (ngSubmit)="enviar()">
+  <form [formGroup]="miFormulario" (ngSubmit)="modificar()">
     <div class="formulario">
       <div class="box-1">
+        <div class="mb-3">
+          <label for="" class="form-label">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            formControlName="id"
+          />
+        </div>
         <!-- MARCA-->
         <div class="mb-3">
           <label for="" class="form-label">Marca</label>
@@ -279,7 +288,9 @@
         </div>
       </div>
       <div class="button">
-        <button type="submit" class="btn btn-primary">Añadir Vehiculo</button>
+        <button type="submit" class="btn btn-primary">
+          Modificar Vehiculo
+        </button>
       </div>
       <div class="button">
         <button type="submit" class="btn btn-warning" (click)="limpiar()">

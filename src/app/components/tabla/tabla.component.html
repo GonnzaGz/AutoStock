@@ -1,32 +1,41 @@
 <table class="table table-hover">
-  <thead>
+  <thead class="table-dark">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Marca</th>
       <th scope="col">Modelo</th>
       <th scope="col">Año</th>
       <th scope="col">Tipo</th>
-      <th scope="col">Detalle</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     @for (auto of listadoAutos; track $index) {
     <tr>
-      <th scope="row">{{ auto.id }}</th>
+      <th scope="row" class="m-2">{{ auto.id }}</th>
       <td>{{ auto.marca }}</td>
       <td>{{ auto.modelo }}</td>
       <td>{{ auto.anio }}</td>
       <td>{{ auto.tipo }}</td>
       <button
         type="button"
-        class="btn btn-outline-warning"
+        class="btn btn-outline-warning m-2"
         [routerLink]="['/tabla', auto.id]"
       >
         Ver Detalle
       </button>
+
       <button
         type="button"
-        class="btn btn-outline-danger"
+        class="btn btn-outline-success m-2"
+        [routerLink]="['/modificar', auto.id]"
+      >
+        Modificar Vehiculo
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-danger m-2"
         (click)="eliminarAuto(auto.id)"
       >
         Borrar Vehiculo

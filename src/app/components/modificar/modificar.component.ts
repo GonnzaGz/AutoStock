@@ -5,17 +5,17 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
 import { IAuto } from '../../models/auto.models';
+import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-formulario',
+  selector: 'app-modificar',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css',
+  templateUrl: './modificar.component.html',
+  styleUrl: './modificar.component.css',
 })
-export class FormularioComponent {
+export class ModificarComponent {
   // creamos el FormGroup
   miFormulario: FormGroup;
 
@@ -23,7 +23,7 @@ export class FormularioComponent {
 
   constructor(private formulario: FormBuilder, private apiService: ApiService) {
     this.miFormulario = this.formulario.group({
-      id: 0,
+      id: ['', Validators.required],
       marca: ['', Validators.required],
       modelo: ['', Validators.required],
       color: ['', Validators.required],
@@ -45,10 +45,10 @@ export class FormularioComponent {
     });
   }
 
-  enviar() {
+  modificar() {
     if (this.miFormulario.valid) {
       this.auto = {
-        id: 0,
+        id: this.miFormulario.value.id,
         marca: this.miFormulario.value.marca,
         modelo: this.miFormulario.value.modelo,
         color: this.miFormulario.value.color,
@@ -74,10 +74,10 @@ export class FormularioComponent {
 
       this.apiService.postAuto(vehiculo).subscribe({
         next: (res) => {
-          console.log('Vehiculo agregado correctamente', res);
+          console.log('Vehiculo modificado correctamente', res);
         },
         error: (error) => {
-          console.error('Error al agregar el vehiculo', error);
+          console.error('Error al modificar el vehiculo', error);
         },
       });
     } else {
@@ -116,7 +116,7 @@ export class FormularioComponent {
   editar() {
     if (this.miFormulario.valid) {
       this.auto = {
-        id: 0,
+        id: this.miFormulario.value.id,
         marca: this.miFormulario.value.marca,
         modelo: this.miFormulario.value.modelo,
         color: this.miFormulario.value.color,
