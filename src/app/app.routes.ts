@@ -4,7 +4,7 @@ import { TablaComponent } from './components/tabla/tabla.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { Error404Component } from './components/error404/error404.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
-import { FormularioComponent } from './formulario/formulario.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

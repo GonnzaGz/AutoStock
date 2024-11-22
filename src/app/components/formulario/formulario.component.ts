@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -44,6 +44,7 @@ export class FormularioComponent {
       imagen5: ['', Validators.required],
     });
   }
+
   enviar() {
     if (this.miFormulario.valid) {
       this.auto = {
@@ -69,14 +70,14 @@ export class FormularioComponent {
       };
       console.log(this.auto);
 
-      const producto = this.convertirAuto(this.auto);
+      const vehiculo = this.convertirAuto(this.auto);
 
-      this.apiService.postAuto(producto).subscribe({
+      this.apiService.postAuto(vehiculo).subscribe({
         next: (res) => {
-          console.log('Producto cargado correctamente', res);
+          console.log('Vehiculo agregado correctamente', res);
         },
         error: (error) => {
-          console.error('Error al agregar el producto', error);
+          console.error('Error al agregar el vehiculo', error);
         },
       });
     } else {
@@ -84,27 +85,27 @@ export class FormularioComponent {
     }
   }
 
-  convertirAuto = (producto: IAuto): any => {
+  convertirAuto = (auto: IAuto): any => {
     return {
-      id: producto.id,
-      marca: producto.marca,
-      modelo: producto.modelo,
-      color: producto.color,
-      condicion: producto.condicion,
-      anio: producto.anio,
-      km: producto.km,
-      tipo: producto.tipo,
-      estado: producto.estado,
-      tipomotor: producto.tipomotor,
-      caja: producto.caja,
-      motor: producto.motor,
-      precio: producto.precio,
-      sede: producto.sede,
-      imagen1: producto.imagen1,
-      imagen2: producto.imagen2,
-      imagen3: producto.imagen3,
-      imagen4: producto.imagen4,
-      imagen5: producto.imagen5,
+      id: auto.id,
+      marca: auto.marca,
+      modelo: auto.modelo,
+      color: auto.color,
+      condicion: auto.condicion,
+      anio: auto.anio,
+      km: auto.km,
+      tipo: auto.tipo,
+      estado: auto.estado,
+      tipomotor: auto.tipomotor,
+      caja: auto.caja,
+      motor: auto.motor,
+      precio: auto.precio,
+      sede: auto.sede,
+      imagen1: auto.imagen1,
+      imagen2: auto.imagen2,
+      imagen3: auto.imagen3,
+      imagen4: auto.imagen4,
+      imagen5: auto.imagen5,
     };
   };
 }
