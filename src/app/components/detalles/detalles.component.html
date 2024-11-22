@@ -1,21 +1,55 @@
-@if(cargando){
-<h5><i>Cargando...</i></h5>
-}@else{
-<h1>Marca: {{ auto?.marca }}</h1>
-<h1>Modelo: {{ auto?.modelo }}</h1>
-<h3>Condición: {{ auto?.condicion }}</h3>
-<h3>Año: {{ auto?.anio }}</h3>
-<h3>Kilometros: {{ auto?.km }}</h3>
-<h3>Tipo de vehículo: {{ auto?.tipo }}</h3>
-<h3>Estado del vehículo: {{ auto?.estado }}</h3>
-<h3>Tipo de motor: {{ auto?.tipomotor }}</h3>
-<h3>Transmisión: {{ auto?.caja }}</h3>
-<h3>Motor (cc): {{ auto?.motor }}</h3>
-<h3>Precio: ${{ auto?.precio }}</h3>
-<h3>Sede: {{ auto?.sede }}</h3>
-<img src="{{ auto?.imagen1 }}" alt="Imagén del vehiculo nº 1" />
-<img src="{{ auto?.imagen2 }}" alt="Imagén del vehiculo nº 2" />
-<img src="{{ auto?.imagen3 }}" alt="Imagén del vehiculo nº 3" />
-<img src="{{ auto?.imagen4 }}" alt="Imagén del vehiculo nº 4" />
-<img src="{{ auto?.imagen5 }}" alt="Imagén del vehiculo nº 5" />
-}
+<div class="gif">
+  <div class="detalles">
+    @if(cargando){
+    <h5><i>Cargando...</i></h5>
+    }@else{
+    <div class="general">
+      <div class="general2">
+        <div>
+          <h3>Marca: {{ auto?.marca }}</h3>
+          <h3>Modelo: {{ auto?.modelo }}</h3>
+          <h3>Condición: {{ auto?.condicion }}</h3>
+          <h3>Año: {{ auto?.anio }}</h3>
+          <h3>Kilometros: {{ auto?.km }}</h3>
+          <h3>Tipo de vehículo: {{ auto?.tipo }}</h3>
+        </div>
+        <div>
+          <h3>Estado del vehículo: {{ auto?.estado }}</h3>
+          <h3>Tipo de motor: {{ auto?.tipomotor }}</h3>
+          <h3>Transmisión: {{ auto?.caja }}</h3>
+          <h3>Motor (cc): {{ auto?.motor }}</h3>
+          <h3>Precio: ${{ auto?.precio }}</h3>
+          <h3>Sede: {{ auto?.sede }}</h3>
+        </div>
+      </div>
+      <div class="fotos">
+        <img
+          class="img"
+          src="{{ auto?.imagen1 }}"
+          alt="Imagén del vehiculo nº 1"
+        />
+        <img
+          class="img"
+          src="{{ auto?.imagen2 }}"
+          alt="Imagén del vehiculo nº 2"
+        />
+        <img
+          class="img"
+          src="{{ auto?.imagen3 }}"
+          alt="Imagén del vehiculo nº 3"
+        />
+        <img
+          class="img"
+          src="{{ auto?.imagen4 }}"
+          alt="Imagén del vehiculo nº 4"
+        />
+        <img
+          class="img"
+          src="{{ auto?.imagen5 }}"
+          alt="Imagén del vehiculo nº 5"
+        />
+      </div>
+    </div>
+    }
+  </div>
+</div>

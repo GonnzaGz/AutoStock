@@ -1,0 +1,50 @@
+.detalles {
+  color: white;
+}
+
+.gif {
+  background-image: url(../../../../public/assets/DSC01691-1_0001_Layer-1.jpg);
+  height: 850px;
+  width: 1263px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: center;
+}
+
+.img {
+  width: 198px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  border-radius: 1rem;
+}
+div {
+  display: inline-block;
+  text-align: center;
+  align-content: center;
+  padding-top: 2rem;
+  padding: 2rem 2rem;
+  gap: 7rem;
+}
+
+.general {
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.general2 {
+  display: flex;
+  justify-content: center;
+}
+
+.fotos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: -5rem;
+}

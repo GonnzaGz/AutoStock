@@ -51,7 +51,7 @@
           <label for="floatingSelect">Elija una de las opciones</label>
         </div>
 
-        <!-- anio -->
+        <!-- año -->
         <div class="mb-3">
           <label for="anio" class="form-label">Año</label>
           <input
@@ -135,7 +135,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="caja" class="form-label">Tipo de Cambios</label>
+          <label for="caja" class="form-label">Transmisión</label>
           <div class="form-floating">
             <select class="form-select" id="caja" formControlName="caja">
               <option value=""></option>
@@ -207,7 +207,9 @@
         </div>
 
         <div class="mb-3">
-          <label for="sede" class="form-label">Ubicacion agencia sede</label>
+          <label for="sede" class="form-label"
+            >Ubicacion de Agencia / Sede</label
+          >
           <div class="form-floating">
             <select class="form-select" id="sede" formControlName="sede">
               <option value=""></option>
@@ -277,14 +279,15 @@
             formControlName="imagen5"
           />
         </div>
-      </div>
-      <div class="button">
-        <button type="submit" class="btn btn-primary">Añadir Vehiculo</button>
-      </div>
-      <div class="button">
-        <button type="submit" class="btn btn-warning" (click)="limpiar()">
-          Limpiar
-        </button>
+
+        <div class="button btn">
+          <button type="submit" class="btn btn-primary">Añadir Vehiculo</button>
+        </div>
+        <div class="button">
+          <button type="submit" class="btn btn-warning" (click)="limpiar()">
+            Limpiar Formulario
+          </button>
+        </div>
       </div>
     </div>
   </form>

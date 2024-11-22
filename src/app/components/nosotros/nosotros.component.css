@@ -1,5 +1,4 @@
-div {
-  background-color: dimgrey;
+.g1 {
   height: 650px;
   width: 1263px;
   background-repeat: no-repeat;
@@ -8,6 +7,7 @@ div {
   background-image: url(../../../../public/assets/mustang.webp);
   background-position: center center;
   color: white;
+
   h1 {
     padding: 1rem;
   }
@@ -15,4 +15,19 @@ div {
   h2 {
     padding: 1rem;
   }
+}
+
+.g2 {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.int {
+  margin-left: 15rem;
+}
+
+.descripcion {
+  margin-top: 3rem;
+  padding: 5rem;
+  border: rgb(255, 0, 0) 1px solid;
 }

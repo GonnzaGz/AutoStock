@@ -1,3 +1,9 @@
+.img {
+  background-image: url(../../../../public/assets/free-photo-of-racing-audi-car-on-nurburgring.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .table {
   color: white;
 }
