@@ -21,11 +21,8 @@ export class FormularioComponent {
 
   auto?: IAuto;
 
-  // Iyectamo nuestra apiService
-  private _apiService = inject(ApiService);
-
-  constructor(private _fb: FormBuilder, _apiService: ApiService) {
-    this.miFormulario = this._fb.group({
+  constructor(private formulario: FormBuilder, private apiService: ApiService) {
+    this.miFormulario = this.formulario.group({
       id: ['', Validators.required],
       marca: ['', Validators.required],
       modelo: ['', Validators.required],
@@ -36,8 +33,10 @@ export class FormularioComponent {
       tipo: ['', Validators.required],
       estado: ['', Validators.required],
       tipo_motor: ['', Validators.required],
+      caja: ['', Validators.required],
       motor: ['', Validators.required],
       precio: ['', Validators.required],
+      sede: ['', Validators.required],
       imagen1: ['', Validators.required],
       imagen2: ['', Validators.required],
       imagen3: ['', Validators.required],
@@ -58,53 +57,54 @@ export class FormularioComponent {
         tipo: this.miFormulario.value.tipo,
         estado: this.miFormulario.value.estado,
         tipomotor: this.miFormulario.value.tipomotor,
+        caja: this.miFormulario.value.caja,
         motor: this.miFormulario.value.motor,
+        precio: this.miFormulario.value.precio,
+        sede: this.miFormulario.value.sede,
         imagen1: this.miFormulario.value.imagen1,
         imagen2: this.miFormulario.value.imagen2,
         imagen3: this.miFormulario.value.imagen3,
         imagen4: this.miFormulario.value.imagen4,
         imagen5: this.miFormulario.value.imagen5,
-        precio: this.miFormulario.value.precio,
       };
-    } /* 
-      console.log(this.producto) 
- 
-      const productoPlano = this.convertirProducto(this.producto) 
-       
-      this._apiService.postproducto(productoPlano).subscribe({ 
-        next: (res)=>{ 
-          console.log('Producto cargado correctamente',res) 
-        },error: (error)=>{ 
-          console.error('Error al agregar el producto') 
-        } 
-         
-      }) 
- 
-    }else{ 
-      console.error('Formulario invalido',this.miFormulario.errors) 
-    }*/
+      console.log(this.auto);
+
+      const producto = this.convertirAuto(this.auto);
+
+      this.apiService.postAuto(producto).subscribe({
+        next: (res) => {
+          console.log('Producto cargado correctamente', res);
+        },
+        error: (error) => {
+          console.error('Error al agregar el producto', error);
+        },
+      });
+    } else {
+      console.error('Formulario invalido', this.miFormulario.errors);
+    }
   }
 
-  /* 
-  convertirProducto = (producto:IAuto): any =>{ 
-    return{ 
-      id: producto.id, 
-      marca:producto.marca, 
-      modelo: producto.modelo, 
-      color: producto.color, 
-      condicion: producto.condicion, 
-      anio: producto.anio, 
-      km: producto.km, 
-      tipo: producto.tipo, 
-      estado: producto.estado, 
-      tipomotor : producto.tipomotor, 
-      motor : producto.motor, 
-      precio: producto.precio 
-      // imagines qeu se ingresan 
-      // 
-      // 
-      // 
-      // 
-    } 
-  }*/
+  convertirAuto = (producto: IAuto): any => {
+    return {
+      id: producto.id,
+      marca: producto.marca,
+      modelo: producto.modelo,
+      color: producto.color,
+      condicion: producto.condicion,
+      anio: producto.anio,
+      km: producto.km,
+      tipo: producto.tipo,
+      estado: producto.estado,
+      tipomotor: producto.tipomotor,
+      caja: producto.caja,
+      motor: producto.motor,
+      precio: producto.precio,
+      sede: producto.sede,
+      imagen1: producto.imagen1,
+      imagen2: producto.imagen2,
+      imagen3: producto.imagen3,
+      imagen4: producto.imagen4,
+      imagen5: producto.imagen5,
+    };
+  };
 }

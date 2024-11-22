@@ -9,11 +9,13 @@ export interface IAuto {
   tipo: string;
   estado: string;
   tipomotor: string;
+  caja: string;
   motor: string;
+  precio: number;
+  sede: string;
   imagen1: string;
   imagen2: string;
   imagen3: string;
   imagen4: string;
   imagen5: string;
-  precio: number;
 }

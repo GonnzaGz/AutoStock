@@ -13,7 +13,7 @@
       </div>
       <!-- MODELO-->
       <div class="mb-3">
-        <label for="modelo" class="form-label">modelo</label>
+        <label for="modelo" class="form-label">Modelo</label>
         <input
           type="text"
           class="form-control"
@@ -23,7 +23,7 @@
       </div>
       <!-- COLOR -->
       <div class="mb-3">
-        <label for="color" class="form-label">color</label>
+        <label for="color" class="form-label">Color</label>
         <input
           type="text"
           class="form-control"
@@ -33,17 +33,18 @@
       </div>
       <!-- Condicion -->
       <div class="mb-3"></div>
-      <label for="Condicion" class="form-label">Condicion</label>
-      <input
-        type="text"
-        class="form-control"
-        id="Condicion"
-        formControlName="Condicion"
-      />
+      <label for="condicion" class="form-label">Condicion</label>
+      <div class="form-floating">
+        <select class="form-select" id="condicion" formControlName="condicion">
+          <option value="1">Nuevo</option>
+          <option value="2">Usado</option>
+        </select>
+        <label for="floatingSelect">Elija una de las opciones</label>
+      </div>
 
       <!-- anio -->
       <div class="mb-3">
-        <label for="anio" class="form-label">aÃ±o</label>
+        <label for="anio" class="form-label">Año</label>
         <input
           type="number"
           class="form-control"
@@ -53,7 +54,7 @@
       </div>
       <!-- KM -->
       <div class="mb-3">
-        <label for="km" class="form-label">km</label>
+        <label for="km" class="form-label">Kilometros</label>
         <input
           type="number"
           class="form-control"
@@ -69,8 +70,18 @@
         <label for="tipo" class="form-label">Tipo</label>
         <div class="form-floating">
           <select class="form-select" id="tipo" formControlName="tipo">
-            <option value="1">Usado</option>
-            <option value="2">Nuevo</option>
+            <option value="1">Hatchback 3 Puertas</option>
+            <option value="2">Hatchback 5 Puertas</option>
+            <option value="3">Sedán</option>
+            <option value="4">Coupe</option>
+            <option value="5">Sedán Coupe</option>
+            <option value="6">Convertible</option>
+            <option value="7">Deportivo</option>
+            <option value="8">SUV</option>
+            <option value="9">Minivan</option>
+            <option value="10">Rural</option>
+            <option value="11">Camioneta 4x4</option>
+            <option value="12">Furgón</option>
           </select>
           <label for="floatingSelect">Elija una de las opciones</label>
         </div>
@@ -78,26 +89,43 @@
 
       <!--ESTADO -->
       <div class="mb-3">
-        <label for="estado" class="form-label">estado</label>
-        <input
-          type="text"
-          class="form-control"
-          id="estado"
-          formControlName="estado"
-        />
+        <label for="estado" class="form-label">Estado</label>
+        <div class="form-floating">
+          <select class="form-select" id="estado" formControlName="estado">
+            <option value="1">0KM</option>
+            <option value="2">Muy buen estado</option>
+            <option value="3">Optimo estado</option>
+            <option value="4">Siniestrado</option>
+            <option value="5">Mal estado</option>
+          </select>
+          <label for="floatingSelect">Elija una de las opciones</label>
+        </div>
       </div>
 
       <!-- tipo de motor (Diesel o Nafta)-->
-      <div>
+      <div class="mb-3">
         <label for="tipo_motor" class="form-label">Tipo de Motor</label>
         <div class="form-floating">
           <select
             class="form-select"
             id="tipo_motor"
-            aformControlName="tipo_motor"
+            formControlName="tipo_motor"
           >
-            <option value="1">Diesel</option>
-            <option value="2">Nafta</option>
+            <option value="1">Nafta</option>
+            <option value="2">Diesel</option>
+            <option value="3">Híbrido</option>
+            <option value="4">Eléctrico</option>
+          </select>
+          <label for="floatingSelect">Elija una de las opciones</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="caja" class="form-label">Tipo de Cambios</label>
+        <div class="form-floating">
+          <select class="form-select" id="caja" formControlName="caja">
+            <option value="1">Manual</option>
+            <option value="2">Automatico</option>
           </select>
           <label for="floatingSelect">Elija una de las opciones</label>
         </div>
@@ -105,18 +133,54 @@
 
       <!--MOTOR -->
       <div class="mb-3">
-        <label for="motor" class="form-label">motor</label>
-        <input
-          type="text"
-          class="form-control"
-          id="motor"
-          formControlName="motor"
-        />
+        <label for="motor" class="form-label">Motor (cc)</label>
+        <div class="form-floating">
+          <select class="form-select" id="motor" formControlName="motor">
+            <option value="1">1.0</option>
+            <option value="2">1.0 Turbo</option>
+            <option value="3">1.2 Turbo</option>
+            <option value="3">1.3</option>
+            <option value="4">1.3 Turbo</option>
+            <option value="4">1.4</option>
+            <option value="1">1.4 Turbo</option>
+            <option value="2">1.6</option>
+            <option value="3">1.6 Turbo</option>
+            <option value="3">1.8</option>
+            <option value="4">1.8 Turbo</option>
+            <option value="5">2.0</option>
+            <option value="6">2.0 Turbo</option>
+            <option value="7">2.2 Turbo</option>
+            <option value="8">2.4</option>
+            <option value="9">2.4 Turbo</option>
+            <option value="10">2.5</option>
+            <option value="11">2.5 Turbo</option>
+            <option value="12">3.0</option>
+            <option value="13">3.0 Turbo</option>
+            <option value="14">3.2</option>
+            <option value="15">3.2 Turbo</option>
+            <option value="16">3.5</option>
+            <option value="17">3.5 Turbo</option>
+            <option value="18">4.0</option>
+            <option value="19">4.0 Turbo</option>
+            <option value="20">4.2</option>
+            <option value="21">4.2 Turbo</option>
+            <option value="22">4.5</option>
+            <option value="23">4.5 Turbo</option>
+            <option value="24">5.0</option>
+            <option value="25">5.0 Turbo</option>
+            <option value="26">5.5</option>
+            <option value="27">5.5 Turbo</option>
+            <option value="28">6.0</option>
+            <option value="29">6.0 Turbo</option>
+            <option value="30">7.0</option>
+          </select>
+          <label for="floatingSelect">Elija una de las opciones</label>
+        </div>
       </div>
 
       <!--PRECIO -->
       <div class="mb-3">
-        <label for="precio" class="form-label">precio</label>
+        <label for="precio" class="form-label">Precio $</label>
         <input
           type="number"
           class="form-control"
@@ -125,6 +189,20 @@
         />
         <!-- IMAGEN 1-->
       </div>
+
+      <div class="mb-3">
+        <label for="sede" class="form-label">Ubicacion agencia sede</label>
+        <div class="form-floating">
+          <select class="form-select" id="sede" formControlName="sede">
+            <option value="1">Norte</option>
+            <option value="2">Este</option>
+            <option value="3">Oeste</option>
+            <option value="4">Sur</option>
+          </select>
+          <label for="floatingSelect">Elija una de las opciones</label>
+        </div>
+      </div>
+
       <div class="mb-3"></div>
       <div class="mb-3"></div>
       <div class="mb-3"></div>
@@ -134,7 +212,7 @@
 
     <!-- Envio de datos-->
     <div class="button">
-      <button type="submit" class="btn btn-primary">Enviar datos</button>
+      <button type="submit" class="btn btn-primary">Añadir Vehiculo</button>
     </div>
   </form>
 </div>
