@@ -8,11 +8,12 @@ import {
 import { IAuto } from '../../models/auto.models';
 import { ApiService } from '../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-modificar',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterModule],
   templateUrl: './modificar.component.html',
   styleUrl: './modificar.component.css',
 })

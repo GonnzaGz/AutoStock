@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IAuto } from '../../models/auto.models';
 import { ApiService } from '../../services/api.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-detalles',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './detalles.component.html',
   styleUrl: './detalles.component.css',
 })

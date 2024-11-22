@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './nosotros.component.html',
-  styleUrl: './nosotros.component.css'
+  styleUrl: './nosotros.component.css',
 })
-export class NosotrosComponent {
-
-}
+export class NosotrosComponent {}

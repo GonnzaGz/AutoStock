@@ -7,11 +7,12 @@ import {
 } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { IAuto } from '../../models/auto.models';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css',
 })
